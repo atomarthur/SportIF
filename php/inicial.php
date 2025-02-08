@@ -32,7 +32,7 @@ verificarSessao();
     </main>
     <div class="menu-central">
         <div class="menu-item">
-            <button onclick="window.location.href='../html/cadastro.html'">Inscrição</button>
+            <button onclick="window.location.href='cadastro.php'">Inscrição</button>
             <p>Cadastre-se para participar das competições.</p>
         </div>
         <div class="menu-item">

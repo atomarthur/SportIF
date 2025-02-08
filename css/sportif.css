@@ -287,6 +287,28 @@ tr:hover {
     background-color: #238c3a;
 }
 
+.Cadastro select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #b7e4c7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f0fdf4;
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+}
+
+.Cadastro select:focus {
+    border-color: #2F9E41;
+    outline: none;
+}
+
+.Cadastro option {
+    padding: 12px;
+    font-size: 16px;
+}
+
 .Cadastro p {
     margin-top: 15px;
     color: #777;
