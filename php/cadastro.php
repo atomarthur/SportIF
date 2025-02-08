@@ -17,7 +17,7 @@
         <div class="Cadastro"> 
             <h2>Inscrição de Times</h2>
             <p>Inscrição de equipes para competições do IFBA</p>
-            <form action="classificacao.html" method="post">
+            <form action="cadastrar_time.php" method="post">
                 <div>
                     <input type="text" placeholder="Nome do time" id="nomeTime" name="nomeTime" required>
                 </div>
@@ -25,18 +25,19 @@
                     <input type="text" placeholder="Sigla" id="siglaTime" name="siglaTime" maxlength="3" required>
                 </div>
                 <div>
-                <select id="modalidade" name="modalidade" required>
+                    <select id="modalidade" name="modalidade" required>
                     <option value="" disabled selected>Selecione a modalidade</option>
-                    <?php
-                        $conn = conectar();
-                        $sql = "SELECT id_modalidade, nome FROM modalidades";
-                        $stmt = $conn->query($sql);
+                        <?php
+                            include 'config.php';
+                            $conn = conectar();
+                            $sql = "SELECT id_modalidade, nome FROM modalidades";
+                            $stmt = $conn->query($sql);
 
-                        while ($modalidade = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                            echo "<option value='" . $modalidade['nome'] . "'>" . $modalidade['nome'] . "</option>";
-                        }
-                    ?>
-                </select>
+                            while ($modalidade = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<option value='" . $modalidade['nome'] . "'>" . $modalidade['nome'] . "</option>";
+                            }
+                        ?>
+                    </select>
                 </div>
                 <div>
                     <input type="text" placeholder="Medalhas - Bronze" id="medalhasBronze" name="medalhasBronze" required>

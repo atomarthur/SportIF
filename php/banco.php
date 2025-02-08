@@ -13,11 +13,15 @@ function cadastrar_usuario($nome, $senha)
     $instrucao->bindParam(":SENHA",$senha);
 
     $instrucao->execute();
-    header('Location:../html/inicial.html');
+    header('Location:../php/inicial.php');
+    exit();
 }
 
 function cadastrar_time($nome, $sigla, $nomeModalidade, $medalhasBronze, $medalhasPrata, $medalhasOuro)
 {
+
+    $conn = conectar();
+
     $sql = "SELECT id_modalidade FROM modalidades WHERE nome = :NOME_MODALIDADE";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(":NOME_MODALIDADE", $nomeModalidade);
@@ -26,12 +30,12 @@ function cadastrar_time($nome, $sigla, $nomeModalidade, $medalhasBronze, $medalh
     $modalidade = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$modalidade) {
-        die("Erro: Modalidade '$modalidadeNome' não encontrada!");
+        die("Erro: Modalidade '$nomeModalidade' não encontrada!");
     }
 
     $id_modalidade = $modalidade['id_modalidade'];
 
-    $sql = "INSERT INTO  equipes (nome, sigla, id_modalidade, medalhasBronze, medalhasPrata, medalhasOuro) VALUES (:NOME,:SIGLA,:ID_MODALIDADE,:MEDALHASBRONZE, :MEDALHASPRATA, :MEDALHASOURO)";
+    $sql = "INSERT INTO  equipes (nome, sigla, id_modalidade, medalhas_bronze, medalhas_prata, medalhas_ouro) VALUES (:NOME,:SIGLA,:ID_MODALIDADE,:MEDALHASBRONZE, :MEDALHASPRATA, :MEDALHASOURO)";
 
     $instrucao = $conn->prepare($sql);
 
@@ -44,5 +48,6 @@ function cadastrar_time($nome, $sigla, $nomeModalidade, $medalhasBronze, $medalh
 
     $instrucao->execute();
     header('Location:inicial.php');
+    exit();
 }
 ?>
