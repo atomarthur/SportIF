@@ -3,6 +3,7 @@ include 'config.php';
 
 function cadastrar_usuario($nome, $senha)
 {
+    //Teste
     $conn = conectar();
     $sql = "INSERT INTO  usuario(nome, senha) VALUES (:NOME, :SENHA)";
 
