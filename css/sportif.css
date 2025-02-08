@@ -1,0 +1,486 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 40px 20px;
+    background: #4CAF50;
+    text-align: center;
+    border-bottom: 1px solid #333; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav a{
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+header h1{
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); 
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    margin-top: 20px;
+}
+
+.texto{
+    height: 100vh;
+    width: 50%;
+    margin: 0px auto;
+    background-color: white;
+    text-align: center;
+    color: black;   
+}
+
+.notificacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 75px;
+    margin: 75px auto;
+    text-align: center;
+    background-color: #333;
+}
+
+.centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.Login,
+.recuperar{
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 128, 0, 0.2);
+    width: 360px;
+    text-align: center;
+    border-top: 5px solid #e63946;
+}
+
+.Login h2,
+.recuperar h2{
+    color: #2a9d8f;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.Login input[type="text"],
+.Login input[type="password"],
+.recuperar input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #b7e4c7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f0fdf4;
+    transition: border-color 0.3s ease;
+}
+
+.Login input[type="text"],
+.Login input[type="password"]
+.recuperar input[type="email"]:focus
+ {
+    border-color: #2a9d8f;
+
+}
+
+.Login button,
+.recuperar button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e63946; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.Login button:hover,
+.recuperar button:hover  {
+    background-color: #d62828;;
+}
+
+.Login p,
+.recuperar p {
+    margin-top: 15px;
+    color: #777;
+}
+
+.Login a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.Login a:hover {
+    text-decoration: underline;
+}
+
+#Senhaesq {
+    margin-top: 20px;
+    color: #555;
+}
+
+#Senhaesq{
+    color: #2a9d8f; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#Senhaesq {
+    text-decoration: underline;
+}
+
+.login_links{
+    margin-top: 20px;
+    color: #555;
+}
+
+.login_links a {
+    color: #2a9d8f; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login_links a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center; 
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+th {
+    background: #ff4d4d; 
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9; 
+}
+
+tr:hover {
+    background: #ffcccc; 
+}
+
+.logo-container {
+    width: 80px; 
+    height: 80px; 
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    
+}
+
+
+.logo {
+    width: 70px; 
+    height: auto;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5)); 
+    border-radius: 8px;
+}
+
+
+
+.Cadastro {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 128, 0, 0.2);
+    width: 360px;
+    text-align: center;
+    border-top: 5px solid #2F9E41;
+}
+
+.Cadastro h2 {
+    color: #2F9E41;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.Cadastro input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #b7e4c7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f0fdf4;
+    transition: border-color 0.3s ease;
+}
+
+.Cadastro input[type="text"]:focus {
+    border-color: #2F9E41;
+}
+
+.Cadastro button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #2F9E41;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.Cadastro button[type="submit"]:hover {
+    background-color: #238c3a;
+}
+
+.Cadastro p {
+    margin-top: 15px;
+    color: #777;
+}
+
+.Cadastro a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.Cadastro a:hover {
+    text-decoration: underline;
+}
+
+.notifications-container {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.notifications-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.not-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: transform 0.2s ease;
+}
+
+.not-card:hover {
+    transform: translateY(-5px);
+}
+
+.nottit {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.notcontent {
+    font-size: 16px;
+    color: #666;
+}
+
+.placar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.time {
+    text-align: center;
+}
+
+#time-a-placar, #time-b-placar {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 15px 0;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.incrementar {
+    background-color: #28a745; 
+    color: white;
+}
+
+.decrementar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.reiniciar {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.reiniciar:hover {
+    background-color: #0056b3;
+}
+
+.vs h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.suporte-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 128, 0, 0.2);
+    width: 400px;
+}
+
+.suporte-container h2 {
+    color: #2F9E41;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.suporte-container input[type="text"],
+.suporte-container input[type="email"],
+.suporte-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #b7e4c7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f0fdf4;
+    transition: border-color 0.3s ease;
+}
+
+.suporte-container input[type="text"]:focus,
+.suporte-container input[type="email"]:focus,
+.suporte-container textarea:focus {
+    border-color: #2F9E41;
+}
+
+.suporte-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2F9E41;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.suporte-container button:hover {
+    background-color: #238c3a;
+}
+
+.placar {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    margin-top: 20px;  
+    width: 80%;
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 128, 0, 0.2); 
+    width: 400px;
+    text-align: center;
+    border-top: 5px solid #e63946;
+    margin: 0 auto; 
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+
+
+
