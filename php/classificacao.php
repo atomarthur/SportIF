@@ -2,6 +2,12 @@
 include 'banco.php';
 
 $times = mostrar_classificacao();
+
+$modalidades = []; 
+
+foreach ($times as $time) {
+    $modalidades[$time['nome_modalidade']][] = $time;
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,37 +34,35 @@ $times = mostrar_classificacao();
         <a href="placar.html">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
+
+    <?php foreach ($modalidades as $nome_modalidade => $times) { ?>
     <div class="tabela">
-
-        <h1>Classificação</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Sigla</th>
-                <th>Modalidade</th>
-                <th>Medalhas - Bronze</th>
-                <th>Medalhas - Prata</th>
-                <th>Medalhas - Ouro</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                foreach ($times as $time) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($time['nome']) . "</td>";
-                    echo "<td>" . htmlspecialchars($time['sigla']) . "</td>";
-                    echo "<td>" . htmlspecialchars($time['nome_modalidade']) . "</td>";
-                    echo "<td>" . htmlspecialchars($time['medalhas_ouro']) . "</td>";
-                    echo "<td>" . htmlspecialchars($time['medalhas_prata']) . "</td>";
-                    echo "<td>" . htmlspecialchars($time['medalhas_bronze']) . "</td>";
-                    echo "</tr>";
-                }
-            ?>
-        </tbody>
-    </table>
-
+        <h2><?= htmlspecialchars($nome_modalidade) ?></h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Sigla</th>
+                    <th>Medalhas - Ouro</th>
+                    <th>Medalhas - Prata</th>
+                    <th>Medalhas - Bronze</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($times as $time) { ?>
+                    <tr>
+                        <td><?= htmlspecialchars($time['nome']) ?></td>
+                        <td><?= htmlspecialchars($time['sigla']) ?></td>
+                        <td><?= htmlspecialchars($time['medalhas_ouro']) ?></td>
+                        <td><?= htmlspecialchars($time['medalhas_prata']) ?></td>
+                        <td><?= htmlspecialchars($time['medalhas_bronze']) ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
+    <?php } ?>
+
 
     <br><br><br><br> <br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br><br><br><br><br>
 
