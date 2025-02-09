@@ -40,7 +40,7 @@ verificarSessao();
             <p>Receba atualizações sobre as competições.</p>
         </div>
         <div class="menu-item">
-            <button onclick="window.location.href='../html/classificacao.html'">Classificação</button>
+            <button onclick="window.location.href='../php/classificacao.php'">Classificação</button>
             <p>Veja o ranking atual das competições.</p>
         </div>
         <div class="menu-item">

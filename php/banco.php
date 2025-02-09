@@ -50,4 +50,16 @@ function cadastrar_time($nome, $sigla, $nomeModalidade, $medalhasBronze, $medalh
     header('Location:inicial.php');
     exit();
 }
+
+function mostrar_classificacao(){
+
+    $conn = conectar();
+    $sql = "SELECT equipes.*, modalidades.nome AS nome_modalidade FROM equipes INNER JOIN modalidades ON equipes.id_modalidade = modalidades.id_modalidade ORDER BY medalhas_ouro DESC, medalhas_prata DESC, medalhas_bronze DESC;";
+    $instrucao = $conn->prepare($sql);
+    $instrucao->execute();
+    
+    $result = $instrucao->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}  
+
 ?>
