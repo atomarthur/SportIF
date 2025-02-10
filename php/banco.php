@@ -64,19 +64,14 @@ function mostrar_classificacao(){
 
 function mostrar_jogos(){
     $conn = conectar();
-    $sql = "SELECT 
-    jogos.id,
-    equipe_a.nome AS equipe_a,
-    equipe_b.nome AS equipe_b,
-    modalidades.nome AS modalidade,
-    jogos.placar_equipe_a,
-    jogos.placar_equipe_b,
-    jogos.status_jogo
-FROM jogos
-JOIN equipes AS equipe_a ON jogos.equipe_a_id = equipe_a.id_time
-JOIN equipes AS equipe_b ON jogos.equipe_b_id = equipe_b.id_time
-JOIN modalidades ON jogos.modalidade_id = modalidades.id_modalidade;"
+    $sql = "SELECT jogos.id, equipe_a.nome AS equipe_a, equipe_b.nome AS equipe_b, modalidades.nome AS nome_modalidade, jogos.placar_equipe_a, jogos.placar_equipe_b, jogos.status_jogo FROM jogos JOIN equipes AS equipe_a ON jogos.equipe_a_id = equipe_a.id_time JOIN equipes AS equipe_b ON jogos.equipe_b_id = equipe_b.id_time JOIN modalidades ON jogos.modalidade_id = modalidades.id_modalidade;";
+   
+    $instrucao = $conn->prepare($sql);
+    $instrucao->execute();
 
+    $jogos = $instrucao->fetchAll(PDO::FETCH_ASSOC);
+
+    return $jogos;
 
 }
 
