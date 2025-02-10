@@ -75,4 +75,40 @@ function mostrar_jogos(){
 
 }
 
+function cadastrar_jogo($nome_modalidade, $equipe_a, $equipe_b, $status_jogo) {
+    $conn = conectar();
+
+    $sql = "SELECT id_modalidade FROM modalidades WHERE nome = :NOME_MODALIDADE";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":NOME_MODALIDADE", $nome_modalidade);
+    $stmt->execute();
+
+    $modalidade = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$modalidade) {
+        die("Erro: Modalidade '$nome_modalidade' não encontrada!");
+    }
+
+    $id_modalidade = $modalidade['id_modalidade'];
+
+    if ($equipe_a === $equipe_b) {
+        die("Erro: As equipes A e B devem ser diferentes.");
+    }
+
+    $sql = "INSERT INTO jogos (modalidade_id, equipe_a_id, equipe_b_id, status_jogo) 
+            VALUES (:ID_MODALIDADE, :EQUIPE_A, :EQUIPE_B, :STATUS_JOGO)";
+
+    $stmt = $conn->prepare($sql);
+
+    $stmt->bindParam(":ID_MODALIDADE", $id_modalidade);
+    $stmt->bindParam(":EQUIPE_A", $equipe_a);
+    $stmt->bindParam(":EQUIPE_B", $equipe_b);
+    $stmt->bindParam(":STATUS_JOGO", $status_jogo);
+
+    $stmt->execute();
+
+    header('Location: inicial.php');
+    exit();
+}
+
 ?>
