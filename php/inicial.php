@@ -61,7 +61,7 @@ verificarSessao();
         </div>
     </div>
 
-    <footer class="footer2">
+    <footer>
         <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
     </footer>
 
