@@ -9,6 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $equipeB = $_POST['equipe_b'];
         $statusJogo = $_POST['status_jogo'];
 
+        if ($equipeA == $equipeB) {
+            echo "<script>alert('As equipes não podem ser iguais!'); history.back();</script>";
+            exit();
+        }
+
         cadastrar_jogo($modalidadeId, $equipeA, $equipeB, $statusJogo);
     }
 }

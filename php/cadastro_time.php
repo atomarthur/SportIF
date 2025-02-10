@@ -34,7 +34,7 @@
                             $stmt = $conn->query($sql);
 
                             while ($modalidade = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<option value='" . $modalidade['nome'] . "'>" . $modalidade['nome'] . "</option>";
+                                echo "<option value='" . $modalidade['id_modalidade'] . "'>" . $modalidade['nome'] . "</option>";
                             }
                         ?>
                     </select>

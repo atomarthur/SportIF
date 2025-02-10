@@ -1,3 +1,18 @@
+<?php
+include 'config.php';
+$conn = conectar();
+
+// Carregar modalidades do banco
+$sqlModalidades = "SELECT id_modalidade, nome FROM modalidades";
+$stmtModalidades = $conn->query($sqlModalidades);
+$modalidades = $stmtModalidades->fetchAll(PDO::FETCH_ASSOC);
+
+// Carregar todas as equipes para manipulação via JavaScript
+$sqlEquipes = "SELECT id_time, nome, id_modalidade FROM equipes";
+$stmtEquipes = $conn->query($sqlEquipes);
+$equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,34 +33,37 @@
         <div class="Cadastro"> 
             <h2>Inscrição de Times</h2>
             <p>Inscrição de equipes para competições do IFBA</p>
-            <form action="cadastrarjogo.php" method="post">
+            <form action="cadastrar_jogo.php" method="post">
                 <div>
-                    <select id="modalidade" name="modalidade" required onchange="carregar_times()">
+                    <select id="modalidade" name="modalidade" required>
                         <option value="" disabled selected>Selecione a modalidade</option>
-                        <?php
-                            include 'config.php';
-                            $conn = conectar();
-                            $sql = "SELECT id_modalidade, nome FROM modalidades";
-                            $stmt = $conn->query($sql);
-
-                            while ($modalidade = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<option value='" . $modalidade['id_modalidade'] . "'>" . $modalidade['nome'] . "</option>";
-                            }
-                        ?>
+                        <?php foreach ($modalidades as $modalidade): ?>
+                            <option value="<?= $modalidade['id_modalidade'] ?>"><?= $modalidade['nome'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                             
-                <!-- Equipe A -->
+                <!-- Seleção da Equipe A -->
                 <div>
                     <select id="equipe_a" name="equipe_a" required>
-                        <option value="" disabled selected>Selecione a Equipe A</option>
+                        <option value="">Selecione a Equipe A</option>
                     </select>
                 </div>
 
-                <!-- Equipe B -->
+                <!-- Seleção da Equipe B -->
                 <div>
                     <select id="equipe_b" name="equipe_b" required>
-                        <option value="" disabled selected>Selecione a Equipe B</option>
+                        <option value="">Selecione a Equipe B</option>
+                    </select>
+                </div>
+
+                <!-- Seleção do Status do Jogo -->
+                <div>
+                    <select id="status_jogo" name="status_jogo" required>
+                        <option value="">Selecione o status</option>
+                        <option value="Agendado">Agendado</option>
+                        <option value="Em Andamento">Em Andamento</option>
+                        <option value="Finalizado">Finalizado</option>
                     </select>
                 </div>
 
@@ -56,5 +74,9 @@
     <footer>
         <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const equipes = <?= json_encode($equipes) ?>; // Enviar as equipes para o JavaScript externo
+    </script>
 </body>
 </html>
