@@ -98,4 +98,43 @@ function cadastrar_jogo($id_modalidade, $equipe_a, $equipe_b, $status_jogo) {
     exit();
 }
 
+function atualizar_placar($id_jogo, $placar_a, $placar_b){
+
+    $conn = conectar();
+
+    $sql = "UPDATE jogos SET placar_a = :placar_a, placar_b = :placar_b WHERE id_jogo = :id_jogo";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':placar_a', $placar_a);
+    $stmt->bindParam(':placar_b', $placar_b);
+    $stmt->bindParam(':id_jogo', $id_jogo);
+        
+    $stmt->execute();
+    $retorno = $stmt->execute(); 
+
+    if($retorno){
+        header('Location:inicial.php');
+    }
+    else{
+        echo "Erro ao atualizar o jogo";
+    }
+
+    header('Location: inicial.php');
+    exit();
+
+}
+
+function obter_jogo_por_id($id_jogo){
+    $conn = conectar();
+
+    $sql = "SELECT equipe_a.nome AS equipe_a, equipe_b.nome AS equipe_b FROM jogos JOIN equipes AS equipe_a ON jogos.equipe_a_id = equipe_a.id_time JOIN equipes AS equipe_b ON jogos.equipe_b_id = equipe_b.id_time WHERE id = :ID_JOGO";
+    $instrucao = $conn->prepare($sql);
+    $instrucao->bindParam(':ID_JOGO', $id_jogo);
+
+    $instrucao->execute();
+
+    $jogo = $instrucao->fetch(PDO::FETCH_ASSOC);
+
+    return $jogo;
+}
+
 ?>

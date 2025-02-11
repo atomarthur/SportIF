@@ -53,7 +53,7 @@ $jogos = mostrar_jogos();
                         <td><?php echo "{$jogo['placar_equipe_a']} x {$jogo['placar_equipe_b']}"; ?></td>
                         <td><?= htmlspecialchars($jogo['equipe_b']) ?></td>
                         <td><?= htmlspecialchars($jogo['status_jogo']) ?></td>
-                        <td><a href="placar.php?id=<?= $jogo['id'] ?>">Atualizar Placar</a></td>
+                        <td><a href="atualizar_placar.php?id=<?= $jogo['id'] ?>">Atualizar Placar</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

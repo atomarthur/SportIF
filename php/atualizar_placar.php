@@ -1,0 +1,70 @@
+<?php
+include 'banco.php';  // Incluindo o arquivo com a função de atualização do placar
+
+if (isset($_GET['id'])) {
+    $id_jogo = $_GET['id'];
+}
+
+$jogo = obter_jogo_por_id($id_jogo);
+
+$time_a = $jogo['equipe_a'];
+$time_b = $jogo['equipe_b'];
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/sportif.css">
+    <script src="../javascript/placar.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/inicio.css">
+    <title>SportIF</title>
+</head>
+<body>
+    <header>
+        <h1>SportIF</h1>
+        <div class="logo_container">
+        <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
+    </div>
+    </header>
+    <nav>
+        <a href="../php/cadastro.php">Inscrição</a>
+        <a href="notificacoes.html">Notificação</a>
+        <a href="classificacao.html">Classificação</a>
+        <a href="competicoes.html">Competições</a>
+        <a href="estatiscticas.html">Estatísticas</a>
+        <a href="placar.html">Placar</a>
+        <a href="suporte.html">Suporte</a>
+    </nav>
+    <div class="container">
+        <h1>Placar do Jogo</h1>
+        <form method="POST" action="funcao_atualizar_placar.php">
+        <div class="placar">
+            <div class="time" id="time-a">
+                <h2><?php echo $time_a; ?></h2> <!-- Nome do Time A -->
+                <div id="time-a-placar">0</div>
+                <button class="incrementar" onclick="atualizarPlacar('a', 'incrementar')">+1</button>
+                <button class="decrementar" onclick="atualizarPlacar('a', 'decrementar')">-1</button>
+            </div>
+            <div class="vs">
+                <h3>VS</h3>
+            </div>
+            <div class="time" id="time-b">
+                <h2><?php echo $time_b; ?></h2> <!-- Nome do Time B -->
+                <div id="time-b-placar">0</div>
+                <button class="incrementar" onclick="atualizarPlacar('b', 'incrementar')">+1</button>
+                <button class="decrementar" onclick="atualizarPlacar('b', 'decrementar')">-1</button>
+            </div>
+        </div>
+        <button class="reiniciar" onclick="reiniciarPlacar()">Reiniciar Placar</button>
+        <button class ="reiniciar" type="submit">Atualizar Placar</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
