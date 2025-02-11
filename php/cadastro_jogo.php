@@ -18,7 +18,7 @@ $equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/sportif.css">
+    <link rel="stylesheet" type="text/css" href="../css/sportif.css?v=2">
     <title>Cadastro de Times - SportIF</title>
     <script src="../javascript/carregar_times.js" defer></script>
 </head>
@@ -37,7 +37,7 @@ $equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
         <a href="estatiscticas.html">Estatísticas</a>
-        <a href="placar.html">Placar</a>
+        <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
     <div class="centro">

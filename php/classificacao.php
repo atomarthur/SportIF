@@ -15,7 +15,7 @@ foreach ($times as $time) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/sportif.css">
+    <link rel="stylesheet" type="text/css" href="../css/sportif.css?v=2">
     <title>SportIF</title>
 </head>
 <body>
@@ -34,14 +34,14 @@ foreach ($times as $time) {
         <a href="../php/classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
         <a href="estatiscticas.html">Estatísticas</a>
-        <a href="placar.html">Placar</a>
+        <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
 
     <?php foreach ($modalidades as $nome_modalidade => $times) { ?>
     <div class="tabela">
         <h2><?= htmlspecialchars($nome_modalidade) ?></h2>
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>Time</th>

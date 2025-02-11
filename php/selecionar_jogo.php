@@ -2,12 +2,6 @@
 include 'banco.php';
 
 $jogos = mostrar_jogos();
-
-$modalidades = []; 
-
-foreach ($jogos as $jogo) {
-    $modalidades[$jogo['nome_modalidade']][] = $jogo;
-}
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +10,10 @@ foreach ($jogos as $jogo) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/sportif.css?v=2">
-    <title>SportIF</title>
+    <title>Selecionar Jogo</title>
 </head>
 <body>
-    <header>
+<header>
     <h1>SportIF</h1>
     <div class="logo_container">
         <a href="inicial.php">
@@ -27,6 +21,7 @@ foreach ($jogos as $jogo) {
         </a>
     </div>
     </header>
+
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
         <a href="notificacoes.html">Notificação</a>
@@ -37,38 +32,35 @@ foreach ($jogos as $jogo) {
         <a href="suporte.html">Suporte</a>
     </nav>
 
-    <?php foreach ($modalidades as $nome_modalidade => $jogos_modalidade) { ?>
     <div class="tabela">
-        <h2><?= htmlspecialchars($nome_modalidade) ?></h2>
+        <h2>Escolha um jogo para atualizar o placar:</h2>
         <table>
             <thead>
                 <tr>
+                    <th>Modalidade</th>
                     <th>Equipe A</th>
                     <th>Placar</th>
                     <th>Equipe B</th>
                     <th>Status</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($jogos_modalidade as $jogo) { ?>
+                <?php foreach ($jogos as $jogo): ?>
                     <tr>
+                        <td><?= htmlspecialchars($jogo['nome_modalidade']) ?></td>
                         <td><?= htmlspecialchars($jogo['equipe_a']) ?></td>
                         <td><?php echo "{$jogo['placar_equipe_a']} x {$jogo['placar_equipe_b']}"; ?></td>
                         <td><?= htmlspecialchars($jogo['equipe_b']) ?></td>
                         <td><?= htmlspecialchars($jogo['status_jogo']) ?></td>
+                        <td><a href="placar.php?id=<?= $jogo['id'] ?>">Atualizar Placar</a></td>
                     </tr>
-                <?php } ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-    <?php } ?>
-
-
-
-    <br><br><br><br> <br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br><br><br><br><br>
-
     <footer>
         <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
     </footer>
-    
 </body>
+</html>
