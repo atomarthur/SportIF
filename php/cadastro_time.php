@@ -8,11 +8,22 @@
 </head>
 <body>
     <header>
-        <h1>SportIF</h1>
-        <div class="logo_container">
+    <h1>SportIF</h1>
+    <div class="logo_container">
+        <a href="inicial.php">
             <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
-        </div>
+        </a>
+    </div>
     </header>
+    <nav>
+        <a href="../php/cadastro.php">Inscrição</a>
+        <a href="notificacoes.html">Notificação</a>
+        <a href="classificacao.php">Classificação</a>
+        <a href="competicoes.php">Competições</a>
+        <a href="estatiscticas.html">Estatísticas</a>
+        <a href="placar.html">Placar</a>
+        <a href="suporte.html">Suporte</a>
+    </nav>
     <div class="centro">
         <div class="Cadastro"> 
             <h2>Inscrição de Times</h2>
@@ -34,7 +45,7 @@
                             $stmt = $conn->query($sql);
 
                             while ($modalidade = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<option value='" . $modalidade['id_modalidade'] . "'>" . $modalidade['nome'] . "</option>";
+                                echo "<option value='" . $modalidade['nome'] . "'>" . $modalidade['nome'] . "</option>";
                             }
                         ?>
                     </select>

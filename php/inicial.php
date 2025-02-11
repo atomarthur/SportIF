@@ -15,10 +15,12 @@ verificarSessao();
 </head>
 <body>
     <header>
-        <h1>SportIF</h1>
-        <div class="logo_container">
+    <h1>SportIF</h1>
+    <div class="logo_container">
+        <a href="inicial.php">
             <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
-        </div>
+        </a>
+    </div>
     </header>
     
 

@@ -20,16 +20,19 @@ foreach ($times as $time) {
 </head>
 <body>
     <header>
-        <h1>SportIF</h1>
-        <div class="logo_container">
-        <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
+    <h1>SportIF</h1>
+    <div class="logo_container">
+        <a href="inicial.php">
+            <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
+        </a>
     </div>
-    </header>
+</header>
+
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
         <a href="notificacoes.html">Notificação</a>
         <a href="../php/classificacao.php">Classificação</a>
-        <a href="competicoes.html">Competições</a>
+        <a href="competicoes.php">Competições</a>
         <a href="estatiscticas.html">Estatísticas</a>
         <a href="placar.html">Placar</a>
         <a href="suporte.html">Suporte</a>
