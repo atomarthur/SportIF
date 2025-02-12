@@ -26,16 +26,18 @@ $time_b = $jogo['equipe_b'];
     <header>
         <h1>SportIF</h1>
         <div class="logo_container">
-        <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
+        <a href="inicial.php">
+            <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
+        </a>
     </div>
     </header>
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
         <a href="notificacoes.html">Notificação</a>
-        <a href="classificacao.html">Classificação</a>
-        <a href="competicoes.html">Competições</a>
+        <a href="classificacao.php">Classificação</a>
+        <a href="competicoes.php">Competições</a>
         <a href="estatiscticas.html">Estatísticas</a>
-        <a href="placar.html">Placar</a>
+        <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
     <div class="container">
@@ -51,9 +53,6 @@ $time_b = $jogo['equipe_b'];
                 <input type="hidden" id="placar_a" name="placar_a" value="0"> 
                 <button class="incrementar" type = 'button' onclick="atualizarPlacar('a', 'incrementar')">+1</button>
                 <button class="decrementar" type = 'button' onclick="atualizarPlacar('a', 'decrementar')">-1</button>
-            </div>
-            <div class="vs">
-                <h3>VS</h3>
             </div>
             <div class="time" id="time-b">
                 <h2><?php echo $time_b; ?></h2> <!-- Nome do Time B -->

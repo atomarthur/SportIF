@@ -423,8 +423,20 @@ tr:hover {
     margin-top: 20px;
 }
 
-.time {
+.time h2 {
+    display: block;
     text-align: center;
+    font-size: 16px; /* Ajuste conforme necessário */
+    font-weight: bold;
+    margin-bottom: 5px; /* Ajuste o espaçamento entre nome e número */
+}
+
+time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px; /* Aumenta a distância entre os times */
 }
 
 #time-a-placar, #time-b-placar {
@@ -473,11 +485,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-.vs h3 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
 
 .suporte-container {
     display: flex;
@@ -536,12 +543,9 @@ button:hover {
 
 .placar {
     display: flex;
-    justify-content: center;  
     align-items: center;
-    margin-top: 20px;  
-    width: 80%;
-    max-width: 600px; 
-    margin: 0 auto; 
+    justify-content: center;
+    gap: 12px; /* Ajuste conforme necessário */
 }
 
 .container {
