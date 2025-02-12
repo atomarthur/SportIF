@@ -1,5 +1,7 @@
 <?php
 
+include 'banco.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_jogo = $_POST['id_jogo'];
     $placar_a = $_POST['placar_a'];

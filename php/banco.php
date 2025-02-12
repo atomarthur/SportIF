@@ -102,7 +102,7 @@ function atualizar_placar($id_jogo, $placar_a, $placar_b){
 
     $conn = conectar();
 
-    $sql = "UPDATE jogos SET placar_a = :placar_a, placar_b = :placar_b WHERE id_jogo = :id_jogo";
+    $sql = "UPDATE jogos SET placar_equipe_a = :placar_a, placar_equipe_b = :placar_b WHERE id = :id_jogo";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':placar_a', $placar_a);
     $stmt->bindParam(':placar_b', $placar_b);
