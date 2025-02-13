@@ -23,17 +23,22 @@ $equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
     <script src="../javascript/carregar_times.js" defer></script>
 </head>
 <body>
-    <header>
-    <h1>SportIF</h1>
+<header>
     <div class="logo_container">
         <a href="inicial.php">
             <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
         </a>
     </div>
-    </header>
+    <h1>SportIF</h1>
+    <div class="sino">
+        <a href="../html/notificacoes.html">
+            <img src="../imagens/sino.png" alt="Notificação">
+        </a>
+    </div>
+</header>
+
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
-        <a href="notificacoes.html">Notificação</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
         <a href="estatiscticas.html">Estatísticas</a>

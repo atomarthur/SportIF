@@ -9,23 +9,29 @@ verificarSessao();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/sportif.css?v=2">
-    <link rel="stylesheet" type="text/css" href="../css/inicio.css">
+    <link rel="stylesheet" type="text/css" href="../css/inicio.css?v=2">
     <title>SportIF</title>
 
 </head>
 <body>
+
     <header>
-    <h1>SportIF</h1>
     <div class="logo_container">
         <a href="inicial.php">
             <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
         </a>
     </div>
-    </header>
+    <h1>SportIF</h1>
+    <div class="sino">
+        <a href="../html/notificacoes.html">
+            <img src="../imagens/sino.png" alt="Notificação">
+        </a>
+    </div>
+</header>
+
     
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
-        <a href="notificacoes.html">Notificação</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
         <a href="estatiscticas.html">Estatísticas</a>
@@ -45,10 +51,6 @@ verificarSessao();
         <div class="menu-item">
             <button onclick="window.location.href='cadastro.php'">Inscrição</button>
             <p>Cadastre-se para participar das competições.</p>
-        </div>
-        <div class="menu-item">
-            <button onclick="window.location.href='../html/notificacoes.html'">Notificação</button>
-            <p>Receba atualizações sobre as competições.</p>
         </div>
         <div class="menu-item">
             <button onclick="window.location.href='../php/classificacao.php'">Classificação</button>
