@@ -31,7 +31,7 @@ $equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <h1>SportIF</h1>
     <div class="sino">
-        <a href="../html/notificacoes.html">
+        <a href="../php/notificacoes.php">
             <img src="../imagens/sino.png" alt="Notificação">
         </a>
     </div>
@@ -92,7 +92,7 @@ $equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
     </footer>
 
     <script>
-        const equipes = <?= json_encode($equipes) ?>; // Enviar as equipes para o JavaScript externo
+        const equipes = <?= json_encode($equipes) ?>; // Enviar as equipes para o JavaScript
     </script>
 </body>
 </html>

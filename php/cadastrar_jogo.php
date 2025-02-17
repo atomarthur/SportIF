@@ -14,7 +14,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
+        $nomeEquipeA = obter_nome_equipe($equipeA);
+        $nomeEquipeB = obter_nome_equipe($equipeB);
+
+        switch ($statusJogo) {
+            case 'Em Andamento':
+                adicionarNotificacao("Acaba de começar!", "Jogo entre ". $nomeEquipeA . " e " . $nomeEquipeB . " em andamento");
+                break;
+            
+            case 'Finalizado':
+                adicionarNotificacao("Fim de jogo!", "Jogo entre ". $nomeEquipeA . " e " . $nomeEquipeB . " finalizado");
+                break;
+
+            case 'Agendado':
+                adicionarNotificacao("Jogo marcado!", "Jogo entre ". $nomeEquipeA . " e " . $nomeEquipeB . " irá acontecer");
+                break;
+        }
+
         cadastrar_jogo($modalidadeId, $equipeA, $equipeB, $statusJogo);
+
+        
+    
     }
 }
 ?>

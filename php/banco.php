@@ -137,4 +137,38 @@ function obter_jogo_por_id($id_jogo){
     return $jogo;
 }
 
+function adicionarNotificacao($titulo, $mensagem){
+    $conn = conectar();
+    $sql = "INSERT INTO notificacoes(titulo, mensagem) VALUES (:TITULO, :MENSAGEM)";
+    $instrucao = $conn->prepare($sql);
+
+    $instrucao->bindParam(":TITULO",$titulo);
+    $instrucao->bindParam(":MENSAGEM",$mensagem);
+
+    $instrucao->execute();
+
+}
+
+function mostrar_notificacoes(){
+    $conn = conectar();
+    $sql = "SELECT titulo, mensagem FROM notificacoes ORDER BY id DESC LIMIT 4"; 
+    $instrucao = $conn->prepare($sql);
+    $instrucao->execute();
+    
+    $result = $instrucao->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function obter_nome_equipe($id_equipe) {
+    $conn = conectar();
+    $sql = "SELECT nome FROM equipes WHERE id_time = :ID";
+    $instrucao = $conn->prepare($sql);
+    $instrucao->bindParam(':ID', $id_equipe);
+    $instrucao->execute();
+    
+    $resultado = $instrucao->fetch(PDO::FETCH_ASSOC);
+    
+    return $resultado;
+}
+
 ?>

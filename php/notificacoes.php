@@ -1,6 +1,7 @@
 <?php
-include 'UserLoginSession.php';
-verificarSessao();
+include 'banco.php';
+
+$notificacoes = mostrar_notificacoes();
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +10,7 @@ verificarSessao();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/sportif.css?v=2">
-    <link rel="stylesheet" type="text/css" href="../css/inicio.css">
     <title>SportIF</title>
-
 </head>
 <body>
 <header>
@@ -27,31 +26,32 @@ verificarSessao();
         </a>
     </div>
 </header>
-
+    
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
-        <a href="notificacoes.html">Notificação</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
         <a href="estatiscticas.html">Estatísticas</a>
-        <a href="selecionar_jogo.php">Placar</a>
+        <a href="placar.php">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
 
-    <div class="menu-central">
-        <div class="menu-item">
-            <button onclick="window.location.href='cadastro_time.php'">Inscrição de times</button>
-            <p>Cadastre times para participar das competições.</p>
+    <div class="notificaçao-container">
+        <h2>Notificações</h2>
+
+        <?php foreach ($notificacoes as $notificacao) { ?>
+        
+            <div class="not-card">
+            <p class="nottit"><?php echo($notificacao['titulo'])?></p>
+            <p class="notcontent"><?php echo($notificacao['mensagem'])?></p>
         </div>
-        <div class="menu-item">
-            <button onclick="window.location.href='cadastro_jogo.php'">Inscrição de jogos</button>
-            <p>Inscreva os jogos.</p>
-        </div>
+
+        <?php } ?>
+
     </div>
 
     <footer>
         <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
     </footer>
-
 </body>
 </html>

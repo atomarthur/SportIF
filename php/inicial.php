@@ -15,7 +15,7 @@ verificarSessao();
 </head>
 <body>
 
-    <header>
+<header>
     <div class="logo_container">
         <a href="inicial.php">
             <img src="../imagens/logo.jpg" alt="Logo do IFBA" class="logo">
@@ -23,7 +23,7 @@ verificarSessao();
     </div>
     <h1>SportIF</h1>
     <div class="sino">
-        <a href="../html/notificacoes.html">
+        <a href="../php/notificacoes.php">
             <img src="../imagens/sino.png" alt="Notificação">
         </a>
     </div>
