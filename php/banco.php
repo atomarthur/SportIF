@@ -163,12 +163,12 @@ function obter_nome_equipe($id_equipe) {
     $conn = conectar();
     $sql = "SELECT nome FROM equipes WHERE id_time = :ID";
     $instrucao = $conn->prepare($sql);
-    $instrucao->bindParam(':ID', $id_equipe);
+    $instrucao->bindParam(':ID', $id_equipe, PDO::PARAM_INT);
     $instrucao->execute();
     
     $resultado = $instrucao->fetch(PDO::FETCH_ASSOC);
     
-    return $resultado;
+    return $resultado ? $resultado['nome'] : 'Equipe Desconhecida';
 }
 
 ?>
