@@ -30,10 +30,9 @@ verificarSessao();
 
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
-        <a href="notificacoes.html">Notificação</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
-        <a href="estatiscticas.html">Estatísticas</a>
+        <a href="estatisticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
@@ -45,7 +44,11 @@ verificarSessao();
         </div>
         <div class="menu-item">
             <button onclick="window.location.href='cadastro_jogo.php'">Inscrição de jogos</button>
-            <p>Inscreva os jogos.</p>
+            <p>Cadastre os jogos que ocorreram.</p>
+        </div>
+        <div class="menu-item">
+            <button onclick="window.location.href='cadastro_estatistica.php'">Inscrição de estatísticas</button>
+            <p>Cadastre as estatíscas e informações de cada jogo.</p>
         </div>
     </div>
 

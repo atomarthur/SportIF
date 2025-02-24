@@ -318,6 +318,24 @@ tr:hover {
     margin-bottom: 8px;
 }
 
+.Cadastro input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #b7e4c7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f0fdf4;
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+    appearance: textfield;
+}
+
+.Cadastro input[type="number"]:focus {
+    border-color: #2F9E41;
+    outline: none;
+}
+
 .Cadastro input[type="text"] {
     width: 100%;
     padding: 12px;

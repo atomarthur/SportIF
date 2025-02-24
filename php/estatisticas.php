@@ -1,13 +1,9 @@
 <?php
+
 include 'banco.php';
 
 $jogos = mostrar_jogos();
-
-$modalidades = []; 
-
-foreach ($jogos as $jogo) {
-    $modalidades[$jogo['nome_modalidade']][] = $jogo;
-}
+$estatisticas = obter_estatisticas();
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +11,8 @@ foreach ($jogos as $jogo) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/sportif.css?v=2">
-    <title>SportIF</title>
+    <link rel="stylesheet" type="text/css" href="../css/sportif.css">
+    <title>Estatísticas</title>
 </head>
 <body>
 <header>
@@ -43,38 +39,32 @@ foreach ($jogos as $jogo) {
         <a href="suporte.html">Suporte</a>
     </nav>
 
-    <?php foreach ($modalidades as $nome_modalidade => $jogos_modalidade) { ?>
     <div class="tabela">
-        <h2><?= htmlspecialchars($nome_modalidade) ?></h2>
+        <h2>Estatísticas dos Jogos</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Equipe A</th>
-                    <th>Placar</th>
-                    <th>Equipe B</th>
-                    <th>Status</th>
+                    <th>Identificador de jogo</th>
+                    <th>Jogo</th>
+                    <th>Estatística</th>
+                    <th>Valor</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($jogos_modalidade as $jogo) { ?>
+                <?php foreach ($estatisticas as $estatistica): ?>
                     <tr>
-                        <td><?= htmlspecialchars($jogo['equipe_a']) ?></td>
-                        <td><?php echo "{$jogo['placar_equipe_a']} x {$jogo['placar_equipe_b']}"; ?></td>
-                        <td><?= htmlspecialchars($jogo['equipe_b']) ?></td>
-                        <td><?= htmlspecialchars($jogo['status_jogo']) ?></td>
+                        <td><?= htmlspecialchars($estatistica['id_jogo']) ?></td>
+                        <td><?= htmlspecialchars($estatistica['equipe_a']) ?> x <?= htmlspecialchars($estatistica['equipe_b']) ?></td>
+                        <td><?= htmlspecialchars($estatistica['estatistica_nome']) ?></td>
+                        <td><?= htmlspecialchars($estatistica['valor']) ?></td>
                     </tr>
-                <?php } ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-    <?php } ?>
-
-
-
-    <br><br><br><br> <br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br><br><br><br><br>
 
     <footer>
         <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
     </footer>
-    
 </body>
+</html>

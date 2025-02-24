@@ -34,7 +34,7 @@ verificarSessao();
         <a href="../php/cadastro.php">Inscrição</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
-        <a href="estatiscticas.html">Estatísticas</a>
+        <a href="estatiscticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
@@ -61,7 +61,7 @@ verificarSessao();
             <p>Acesse as informações das competições em andamento.</p>
         </div>
         <div class="menu-item">
-            <button onclick="window.location.href='../html/estatisticas.html'">Estatísticas</button>
+            <button onclick="window.location.href='../php/estatisticas.php'">Estatísticas</button>
             <p>Confira as estatísticas detalhadas de desempenho.</p>
         </div>
         <div class="menu-item">

@@ -41,13 +41,13 @@ $equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
         <a href="../php/cadastro.php">Inscrição</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
-        <a href="estatiscticas.html">Estatísticas</a>
+        <a href="estatisticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
     <div class="centro">
         <div class="Cadastro"> 
-            <h2>Inscrição de Times</h2>
+            <h2>Inscrição de jogos</h2>
             <p>Inscrição de equipes para competições do IFBA</p>
             <form action="cadastrar_jogo.php" method="post">
                 <div>
@@ -83,7 +83,7 @@ $equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
                     </select>
                 </div>
 
-                <button type="submit">Cadastrar Jogo</button>
+                <button type="submit">Comfirmar</button>
             </form>
         </div>
     </div>

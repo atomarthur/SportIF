@@ -38,7 +38,7 @@ foreach ($times as $time) {
         <a href="../php/cadastro.php">Inscrição</a>
         <a href="../php/classificacao.php">Classificação</a>
         <a href="competicoes.php">Competições</a>
-        <a href="estatiscticas.html">Estatísticas</a>
+        <a href="estatisticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.html">Suporte</a>
     </nav>
