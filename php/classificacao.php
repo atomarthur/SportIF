@@ -1,4 +1,9 @@
 <?php
+include 'UserLoginSession.php';
+verificarSessao();
+?>
+
+<?php
 include 'banco.php';
 
 $times = mostrar_classificacao();
@@ -40,7 +45,7 @@ foreach ($times as $time) {
         <a href="competicoes.php">Competições</a>
         <a href="estatisticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
-        <a href="suporte.html">Suporte</a>
+        <a href="suporte.php">Suporte</a>
     </nav>
 
     <?php foreach ($modalidades as $nome_modalidade => $times) { ?>

@@ -1,4 +1,9 @@
 <?php
+include 'UserLoginSession.php';
+verificarSessao();
+?>
+
+<?php
 include 'banco.php';
 
 $notificacoes = mostrar_notificacoes();
@@ -33,7 +38,7 @@ $notificacoes = mostrar_notificacoes();
         <a href="competicoes.php">Competições</a>
         <a href="estatisticas.php">Estatísticas</a>
         <a href="placar.php">Placar</a>
-        <a href="suporte.html">Suporte</a>
+        <a href="suporte.php">Suporte</a>
     </nav>
 
     <div class="notificaçao-container">

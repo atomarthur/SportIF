@@ -1,4 +1,9 @@
 <?php
+include 'UserLoginSession.php';
+verificarSessao();
+?>
+
+<?php
 include 'config.php';
 $conn = conectar();
 
@@ -44,7 +49,7 @@ $jogos = $stmtJogos->fetchAll(PDO::FETCH_ASSOC);
         <a href="competicoes.php">Competições</a>
         <a href="estatisticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
-        <a href="suporte.html">Suporte</a>
+        <a href="suporte.php">Suporte</a>
     </nav>
     <div class="centro">
     <div class="Cadastro"> 

@@ -1,4 +1,9 @@
 <?php
+include 'UserLoginSession.php';
+verificarSessao();
+?>
+
+<?php
 include 'banco.php';  // Incluindo o arquivo com a função de atualização do placar
 
 if (isset($_GET['id'])) {
@@ -43,7 +48,7 @@ $time_b = $jogo['equipe_b'];
         <a href="competicoes.php">Competições</a>
         <a href="estatisticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
-        <a href="suporte.html">Suporte</a>
+        <a href="suporte.php">Suporte</a>
     </nav>
     <div class="container">
         <h1>Placar do Jogo</h1>

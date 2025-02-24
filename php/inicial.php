@@ -69,7 +69,7 @@ verificarSessao();
             <p>adicione os valores dos placares das competições.</p>
         </div>
         <div class="menu-item">
-            <button onclick="window.location.href='../html/suporte.html'">Suporte</button>
+            <button onclick="window.location.href='../php/suporte.php'">Suporte</button>
             <p>Entre em contato para obter ajuda ou suporte.</p>
         </div>
     </div>

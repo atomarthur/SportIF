@@ -13,7 +13,7 @@ function cadastrar_usuario($nome, $senha)
     $instrucao->bindParam(":SENHA",$senha);
 
     $instrucao->execute();
-    header('Location:../php/inicial.php');
+    header('Location:../php/index.php');
     exit();
 }
 
@@ -188,6 +188,30 @@ function cadastrar_estatistica($id_jogo, $estatistica, $valor){
 function obter_estatisticas() {
     $conn = conectar();
     $sql = "SELECT e.id_jogo, e.estatistica_nome, e.valor, eq1.nome AS equipe_a, eq2.nome AS equipe_b FROM estatisticas e JOIN jogos j ON e.id_jogo = j.id JOIN equipes eq1 ON j.equipe_a_id = eq1.id_time JOIN equipes eq2 ON j.equipe_b_id = eq2.id_time ORDER BY id_jogo" ;
+    
+    $instrucao = $conn->prepare($sql);
+    $instrucao->execute();
+
+    $retorno = $instrucao->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $retorno;
+}
+
+function cadastrar_mensagem($nome, $mensagem){
+    $conn = conectar();
+    $sql = "INSERT INTO mensagem (nome, mensagem) VALUES (:NOME, :MENSAGEM)";
+    $instrucao = $conn->prepare($sql);
+    $instrucao->bindParam(':NOME', $nome, PDO::PARAM_STR);
+    $instrucao->bindParam(':MENSAGEM', $mensagem, PDO::PARAM_STR);
+
+    $instrucao->execute();
+    header('Location:inicial.php');
+    exit();
+}
+
+function obter_mensagem(){
+    $conn = conectar();
+    $sql = "SELECT * FROM mensagem";
     
     $instrucao = $conn->prepare($sql);
     $instrucao->execute();

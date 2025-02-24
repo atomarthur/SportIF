@@ -33,7 +33,7 @@ class UserLogin{
 
 function verificarSessao(){
   if(!isset($_SESSION['logado'])){
-    header("Location:../html/index.html");
+    header("Location:../php/index.php");
   }
 }
  ?>
