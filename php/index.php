@@ -26,7 +26,7 @@
     </div>
 </div>
 <footer>
-    <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
+<p>&copy;2025 SportIF. Todos os direitos reservados.</p>
 </footer>
 
 </body>

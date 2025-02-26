@@ -33,7 +33,7 @@ verificarSessao();
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
         <a href="classificacao.php">Classificação</a>
-        <a href="competicoes.php">Competições</a>
+        <a href="competicoes.php">Jogos</a>
         <a href="estatiscticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.html">Suporte</a>
@@ -57,7 +57,7 @@ verificarSessao();
             <p>Veja o ranking atual das competições.</p>
         </div>
         <div class="menu-item">
-            <button onclick="window.location.href='../php/competicoes.php'">Competições</button>
+            <button onclick="window.location.href='../php/competicoes.php'">Jogos</button>
             <p>Acesse as informações das competições em andamento.</p>
         </div>
         <div class="menu-item">
@@ -75,7 +75,7 @@ verificarSessao();
     </div>
 
     <footer>
-        <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
+    <p>&copy;2025 SportIF. Todos os direitos reservados.</p>
     </footer>
 
 </body>

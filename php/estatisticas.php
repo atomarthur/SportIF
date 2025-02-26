@@ -38,7 +38,7 @@ $estatisticas = obter_estatisticas();
     <nav>
         <a href="../php/cadastro.php">Inscrição</a>
         <a href="classificacao.php">Classificação</a>
-        <a href="competicoes.php">Competições</a>
+        <a href="competicoes.php">Jogos</a>
         <a href="estatisticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.php">Suporte</a>
@@ -69,7 +69,7 @@ $estatisticas = obter_estatisticas();
     </div>
 
     <footer>
-        <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
+    <p>&copy;2025 SportIF. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>

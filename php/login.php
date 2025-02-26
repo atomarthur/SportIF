@@ -13,13 +13,13 @@ if(!empty($_POST['nome']) && !empty($_POST['senha'])){
     if(isset($_SESSION['logado'])){
       header('Location:inicial.php');
     }else{
-  header('Location:../html/index.html');
+  header('Location:index.php');
     }
   }else{
-  header('Location:../html/index.html');
+    header('Location:index.php');
   }
 
 }else{
-  header('Location:../html/index.html');
+  header('Location:index.php');
 }
 ?>

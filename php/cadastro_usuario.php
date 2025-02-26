@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/sportif.css">
-    <title>Cadastro - SportIF</title>
+    <title>SportIF</title>
 </head>
 <body>
 <header>
@@ -17,16 +17,17 @@
         <div class="Cadastro">
             <h2>Cadastro</h2>
             <p>Preencha os campos abaixo para criar sua conta</p>
-            <form action="../php/cadastrar_usuario.php" method="post">
+            <form action="../php/cadastrar_usuario.php" method="POST">
                 <input type="text" placeholder="Usuário" name="nome" required>
                 <input type="password" placeholder="Senha" name="senha" required>
+                <input type="password" placeholder="Confirmar senha" name="confirma_senha" required>
                 <button type="submit">Cadastrar</button>
             </form>
             <p class="login_links">Já tem uma conta? <a href="index.php">Faça login aqui</a></p>
         </div>
     </div>
     <footer>
-        <p>&copy;2024 SportIF. Todos os direitos reservados.</p>
+    <p>&copy;2025 SportIF. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
