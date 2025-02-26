@@ -31,7 +31,7 @@ verificarSessao();
 
     
     <nav>
-        <a href="../php/cadastro.php">Inscrição</a>
+        <a href="../php/cadastro.php">Inscrições</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Jogos</a>
         <a href="estatiscticas.php">Estatísticas</a>
@@ -49,7 +49,7 @@ verificarSessao();
     </main>
     <div class="menu-central">
         <div class="menu-item">
-            <button onclick="window.location.href='cadastro.php'">Inscrição</button>
+            <button onclick="window.location.href='cadastro.php'">Inscrições</button>
             <p>Cadastre-se para participar das competições.</p>
         </div>
         <div class="menu-item">

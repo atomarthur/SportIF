@@ -36,7 +36,7 @@ $estatisticas = obter_estatisticas();
 
 
     <nav>
-        <a href="../php/cadastro.php">Inscrição</a>
+        <a href="../php/cadastro.php">Inscrições</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Jogos</a>
         <a href="estatisticas.php">Estatísticas</a>

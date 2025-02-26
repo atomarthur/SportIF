@@ -27,7 +27,7 @@ verificarSessao();
     </div>
 </header>
     <nav>
-        <a href="../php/cadastro.php">Inscrição</a>
+        <a href="../php/cadastro.php">Inscrições</a>
         <a href="classificacao.html">Classificação</a>
         <a href="competicoes.html">Jogos</a>
         <a href="estatisticas.php">Estatísticas</a>
@@ -40,7 +40,7 @@ verificarSessao();
             <h2>Contato</h2>
             <p>Se precisar de ajuda, entre em contato conosco através dos meios abaixo ou envie uma mensagem usando o formulário.</p>
             <p><strong>Telefone:</strong> (71) 1234-5678</p>
-            <p><strong>E-mail:</strong> suporte@sportif.com</p>
+            <p><strong>E-mail:</strong> sportifppa@gmail.com</p>
             
             <form action="cadastrar_mensagem.php" method="post">
                 <div>
