@@ -83,7 +83,7 @@ $jogos = $stmtJogos->fetchAll(PDO::FETCH_ASSOC);
                 <input type="number" name="valor" placeholder="Valor da estatística" required>
             </div>
 
-            <button type="submit">Comfirmar</button>
+            <button type="submit">Confirmar</button>
         </form>
     </div>
 </div>

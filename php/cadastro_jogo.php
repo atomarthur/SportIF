@@ -88,7 +88,7 @@ $equipes = $stmtEquipes->fetchAll(PDO::FETCH_ASSOC);
                     </select>
                 </div>
 
-                <button type="submit">Comfirmar</button>
+                <button type="submit">Confirmar</button>
             </form>
         </div>
     </div>
