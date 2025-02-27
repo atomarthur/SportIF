@@ -2,7 +2,7 @@
 
 function conectar()
 {
-    $conn = new PDO ("mysql:dbname=sportif;host=localhost","root","aluno");
+    $conn = new PDO ("mysql:dbname=sportif;host=localhost","root","");
     return $conn;
 }
  ?>

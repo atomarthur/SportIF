@@ -37,7 +37,7 @@ $notificacoes = mostrar_notificacoes();
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Jogos</a>
         <a href="estatisticas.php">Estatísticas</a>
-        <a href="placar.php">Placar</a>
+        <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.php">Suporte</a>
     </nav>
 

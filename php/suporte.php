@@ -28,10 +28,10 @@ verificarSessao();
 </header>
     <nav>
         <a href="../php/cadastro.php">Inscrições</a>
-        <a href="classificacao.html">Classificação</a>
-        <a href="competicoes.html">Jogos</a>
+        <a href="classificacao.php">Classificação</a>
+        <a href="competicoes.php">Jogos</a>
         <a href="estatisticas.php">Estatísticas</a>
-        <a href="placar.html">Placar</a>
+        <a href="selecionar_jogo.php">Placar</a>
         <a href="suporte.php">Suporte</a>
     </nav>
 

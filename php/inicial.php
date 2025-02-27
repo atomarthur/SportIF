@@ -34,9 +34,9 @@ verificarSessao();
         <a href="../php/cadastro.php">Inscrições</a>
         <a href="classificacao.php">Classificação</a>
         <a href="competicoes.php">Jogos</a>
-        <a href="estatiscticas.php">Estatísticas</a>
+        <a href="estatisticas.php">Estatísticas</a>
         <a href="selecionar_jogo.php">Placar</a>
-        <a href="suporte.html">Suporte</a>
+        <a href="suporte.php">Suporte</a>
     </nav>
 
     <main>
